@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap');
+:root {
+   --header-height: 3rem;
+   /* Font weight */
+   --font-medium: 500;
+   --font-semi-bold: 600;
+   --font-bold: 700;
+   /* Colors */
+   --blue-1: #1b5996;
+   --blue-2: #007fdb;
+   --blue-3: #4091e1;
+   --blue-4: #71b4f6;
+   --red-1: #830000;
+   --red-2: #d93232;
+   --light-cl: #ffffff;
+   --light-dark-cl: #e9eef3;
+   --dark-cl: #000000;
+   /* Typograhy */
+   --body-font: 'Poppins', sans-serif;
+   --big-font-size: 2rem;
+   --h1-font-size: 1.5rem;
+   --h2-font-size: 1.25rem;
+   --normal-font-size: .938rem;
+   --small-font-size: .813rem;
+   /* Margins */
+   --mb-1: .5rem;
+   --mb-2: 1rem;
+   --mb-3: 1.5rem;
+   --mb-4: 2rem;
+   --mb-5: 2.5rem;
+   --mb-6: 3rem;
+   /* Z-index */
+   --z-tooltip: 10;
+   --z-fixed: 100;
+   /* Rotate Img */
+   --rotate-img: rotate(-30deg)
+}
+
+@media screen and (min-width:768px) {
+    :root {
+       --big-font-size: 3rem;
+       --h1-font-size: 2.5rem;
+       --h2-font-size: 1.5rem;
+       --normal-font-size: 1rem;
+       --small-font-size: .875rem;
+   }
+}
+/* BASE */
+
+*,
+::before,
+::after {
+   box-sizing: border-box;
+}
+
+html {
+   scroll-behavior: smooth;
+}
+
+body {
+   margin: var(--header-height) 0 0 0;
+   font-family: var(--body-font);
+   font-size: var(--normal-font-size);
+   color: var(--dark-cl);
+   font-weight: var(--font-medium);
+   line-height: 1.6;
+   overflow-x: hidden;
+}
+
+h1,
+h2,
+p {
+   margin: 0;
+}
+
+ul {
+   margin: 0;
+   padding: 0;
+   list-style: none;
+}
+
+a {
+   text-decoration: none;
+   color: var(--dark-cl);
+}
+
+img {
+   max-width: 100%;
+   height: auto;
+   display: block;
+}
+
+input:focus {
+   outline: none;
+}
+
+.site__header {
+   width: 100%;
+   position: fixed;
+   top: 0;
+   z-index: var(--z-fixed);
+   background-color: var(--blue-3);
+   -webkit-box-shadow: 0px 2px 18px -6px rgba(0, 0, 0, 0.75);
+   -moz-box-shadow: 0px 2px 18px -6px rgba(0, 0, 0, 0.75);
+   box-shadow: 0px 2px 18px -6px rgba(0, 0, 0, 0.75);
+}
+
+nav{
+   height: var(--header-height);
+   width: 100%;
+   max-width: 1504px;
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: space-between;
+   padding: 0 100px;
+   margin: auto;
+}
+
+.nav__logo{
+   font-weight: var(--font-bold);
+   font-size: 30px;
+   color: var(--light-cl);
+   letter-spacing: -2px;
+}
+
+nav .nav__list{
+   display: flex;
+   flex: 1;
+   list-style: none;
+   padding: 0 0 0 0;
+}
+
+nav ul li {
+   padding: 0 0;
+}
+
+nav ul li a{
+   display: block;
+   margin: 0;
+   padding: 12px 18px;
+   color: var(--light-cl);
+   font-weight: var(--font-semi-bold);
+   font-size: 15px;
+   text-decoration: none;
+   text-transform: uppercase;
+}
+
+
+nav ul li a:hover{
+   background-color: var(--light-cl);
+   color: var(--blue-3);
+}
+
+.active{
+   color: var(--blue-3);
+   background-color: var(--light-cl);
+}
+
+
+nav form{
+   display: flex;
+   height: 40px;
+   padding: 2px;
+   background-color: var(--light-cl);
+   min-width: 18% !important;
+   border: none;
+   border-radius: 50px;
+}
+
+nav form .search__data{
+   height: 100%;
+   width: 100%;
+   padding: 0 10px;
+   color: var(--light-cl);
+   border: none;
+   border-radius: 50px;
+   font-weight: 500;
+   font-size: 17px;
+}
+nav form button{
+   background-color: var(--blue-4);
+   border: none;
+   cursor: pointer;
+   font-size: 23px;
+   border-radius: 100px;
+}
+
+
+.search__icon,
+.cancel__icon,
+.cart__icon,
+.wishlist__icon,
+.nav__toggle{
+ font-size: 1.5rem;
+ margin-right: var(--mb-2);
+}
+
+.search__icon,
+.cancel__icon,
+.nav__toggle,
+.search__icon.hide,
+.cancel__icon.hide{
+ display: none;
+ cursor: pointer;
+}
+
+
+.cancel__icon.show{
+ display: block;
+}
+
+@media screen and (max-width: 1245px){
+ nav {
+     padding: 0 50px;
+ }
+}
+
+@media screen and (max-width: 1000px){
+ nav .nav__icons .search__icon{
+     display: block;
+ }
+
+
+nav .nav__icons{
+ display: flex;
+}
+nav form {
+ position: absolute;
+ top: 50px;
+ right: 120px;
+ opacity: 1;
+ pointer-events: none;
+ transition: top 0.3ms ease, opacity 0.1ms ease;
+}
+ 
+}
